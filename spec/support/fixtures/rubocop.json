@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "rubocop_version": "0.60.0",
+    "ruby_engine": "ruby",
+    "ruby_version": "2.5.3",
+    "ruby_patchlevel": "105",
+    "ruby_platform": "x86_64-darwin16"
+  },
+  "files": [
+    {
+      "path": "example1.rb",
+      "offenses": [
+        {
+          "severity": "convention",
+          "message": "Naming/MethodName: Use snake_case for method names.",
+          "cop_name": "Naming/MethodName",
+          "corrected": false,
+          "location": {
+            "start_line": 1,
+            "start_column": 5,
+            "last_line": 1,
+            "last_column": 11,
+            "length": 7,
+            "line": 1,
+            "column": 5
+          }
+        },
+        {
+          "severity": "convention",
+          "message": "Style/GuardClause: Use a guard clause instead of wrapping the code inside a conditional expression.",
+          "cop_name": "Style/GuardClause",
+          "corrected": false,
+          "location": {
+            "start_line": 2,
+            "start_column": 3,
+            "last_line": 2,
+            "last_column": 4,
+            "length": 2,
+            "line": 2,
+            "column": 3
+          }
+        },
+        {
+          "severity": "convention",
+          "message": "Style/IfUnlessModifier: Favor modifier `if` usage when having a single-line body. Another good alternative is the usage of control flow `&&`/`||`.",
+          "cop_name": "Style/IfUnlessModifier",
+          "corrected": false,
+          "location": {
+            "start_line": 2,
+            "start_column": 3,
+            "last_line": 2,
+            "last_column": 4,
+            "length": 2,
+            "line": 2,
+            "column": 3
+          }
+        },
+        {
+          "severity": "warning",
+          "message": "Layout/EndAlignment: `end` at 4, 4 is not aligned with `if` at 2, 2.",
+          "cop_name": "Layout/EndAlignment",
+          "corrected": false,
+          "location": {
+            "start_line": 4,
+            "start_column": 5,
+            "last_line": 4,
+            "last_column": 7,
+            "length": 3,
+            "line": 4,
+            "column": 5
+          }
+        }
+      ]
+    },
+    {
+      "path": "example2.rb",
+      "offenses": [
+        {
+          "severity": "convention",
+          "message": "Style/Documentation: Missing top-level class documentation comment.",
+          "cop_name": "Style/Documentation",
+          "corrected": false,
+          "location": {
+            "start_line": 1,
+            "start_column": 1,
+            "last_line": 1,
+            "last_column": 5,
+            "length": 5,
+            "line": 1,
+            "column": 1
+          }
+        },
+        {
+          "severity": "convention",
+          "message": "Style/ColonMethodDefinition: Do not use `::` for defining class methods.",
+          "cop_name": "Style/ColonMethodDefinition",
+          "corrected": false,
+          "location": {
+            "start_line": 2,
+            "start_column": 11,
+            "last_line": 2,
+            "last_column": 12,
+            "length": 2,
+            "line": 2,
+            "column": 11
+          }
+        },
+        {
+          "severity": "convention",
+          "message": "Naming/MethodName: Use snake_case for method names.",
+          "cop_name": "Naming/MethodName",
+          "corrected": false,
+          "location": {
+            "start_line": 2,
+            "start_column": 13,
+            "last_line": 2,
+            "last_column": 22,
+            "length": 10,
+            "line": 2,
+            "column": 13
+          }
+        },
+        {
+          "severity": "convention",
+          "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.",
+          "cop_name": "Style/StringLiterals",
+          "corrected": false,
+          "location": {
+            "start_line": 3,
+            "start_column": 10,
+            "last_line": 3,
+            "last_column": 15,
+            "length": 6,
+            "line": 3,
+            "column": 10
+          }
+        },
+        {
+          "severity": "warning",
+          "message": "Layout/DefEndAlignment: `end` at 4, 0 is not aligned with `def` at 2, 2.",
+          "cop_name": "Layout/DefEndAlignment",
+          "corrected": false,
+          "location": {
+            "start_line": 4,
+            "start_column": 1,
+            "last_line": 4,
+            "last_column": 3,
+            "length": 3,
+            "line": 4,
+            "column": 1
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "offense_count": 9,
+    "target_file_count": 2,
+    "inspected_file_count": 2
+  }
+}
