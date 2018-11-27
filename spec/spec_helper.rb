@@ -20,3 +20,8 @@ end
 def spec_dir
   Pathname(__dir__)
 end
+
+def system!(command)
+  ret = system(command)
+  raise "`#{command}` is failed" unless ret
+end

@@ -10,9 +10,4 @@ RSpec.shared_context :setup_dummy_repo do
     system! "git add ."
     system! "git commit -m 'Initial commit'"
   end
-
-  def system!(command)
-    ret = system(command)
-    raise "`#{command}` is failed" unless ret
-  end
 end
