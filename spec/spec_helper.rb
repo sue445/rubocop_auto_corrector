@@ -1,5 +1,9 @@
 require "bundler/setup"
 require "rubocop_auto_corrector"
+require "rubocop_auto_corrector/cli"
+require "rspec/temp_dir"
+
+Dir["#{__dir__}/support/**/*.rb"].each {|f| require f }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -11,4 +15,8 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+end
+
+def spec_dir
+  Pathname(__dir__)
 end

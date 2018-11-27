@@ -1,0 +1,6 @@
+cop_orders:
+  # Run `Style/UnneededPercentQ` before `Style/StringLiterals`.
+  Style/UnneededPercentQ: 50
+
+exclude_cops:
+  Lint/UnneededDisable: "Lint/UnneededDisable can not be used with --only."
