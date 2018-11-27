@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
-require "rubocop_auto_corrector/cli"
-require "rubocop_auto_corrector/version"
-require "optparse"
+require 'rubocop_auto_corrector/cli'
+require 'rubocop_auto_corrector/version'
+require 'optparse'
 
 opt = OptionParser.new
 params = {
@@ -10,7 +10,7 @@ params = {
 }
 
 Version = RubocopAutoCorrector::VERSION
-opt.on("--auto-correct-count COUNT", "Run `rubocop --auto-correct` and `git commit` with this times (default. 2)") { |v| params[:auto_correct_count] = v.to_i }
+opt.on('--auto-correct-count COUNT', 'Run `rubocop --auto-correct` and `git commit` with this times (default. 2)') { |v| params[:auto_correct_count] = v.to_i }
 
 opt.parse!(ARGV)
 
