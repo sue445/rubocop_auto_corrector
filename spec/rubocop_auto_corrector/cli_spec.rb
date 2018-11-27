@@ -16,13 +16,13 @@ RSpec.describe RubocopAutoCorrector::CLI do
       rubocop_commits = git_log.each_line.reject { |line| line.match?(/Initial commit/) }
 
       aggregate_failures do
-        expect(example1).to eq <<~RUBY
+        expect(example1).to eq(<<~RUBY)
           def badName
             test if something
           end
         RUBY
 
-        expect(example2).to eq <<~RUBY
+        expect(example2).to eq(<<~RUBY)
           class Foo
             def self.someMethod
               puts 'test'
