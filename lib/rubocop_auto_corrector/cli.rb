@@ -1,14 +1,14 @@
 module RubocopAutoCorrector
-  require "json"
-  require "yaml"
+  require 'json'
+  require 'yaml'
 
   class CLI
     DEFAULT_ORDER = 100
 
     def initialize
       data = YAML.load_file("#{__dir__}/data.yml")
-      @cop_orders = data["cop_orders"]
-      @exclude_cops = data["exclude_cops"]
+      @cop_orders = data['cop_orders']
+      @exclude_cops = data['exclude_cops']
     end
 
     def perform
@@ -27,8 +27,8 @@ module RubocopAutoCorrector
       rubocop_result = JSON.parse(run_rubocop_for_collect)
 
       cop_names = []
-      rubocop_result["files"].each do |file|
-        cop_names += file["offenses"].map { |offense| offense["cop_name"] }
+      rubocop_result['files'].each do |file|
+        cop_names += file['offenses'].map { |offense| offense['cop_name'] }
       end
       cop_names.uniq
     end

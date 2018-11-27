@@ -1,16 +1,16 @@
 RSpec.describe RubocopAutoCorrector::CLI do
   let(:cli) { RubocopAutoCorrector::CLI.new }
 
-  describe "#perform" do
+  describe '#perform' do
     subject { cli.perform }
 
     include_context :setup_dummy_repo
 
-    it "auto correct and commit" do
+    it 'auto correct and commit' do
       subject
 
-      example1 = File.read("example1.rb")
-      example2 = File.read("example2.rb")
+      example1 = File.read('example1.rb')
+      example2 = File.read('example2.rb')
 
       git_log = `git --no-pager log --oneline`.strip
       rubocop_commits = git_log.each_line.reject { |line| line.match?(/Initial commit/) }
@@ -36,15 +36,15 @@ end
     end
   end
 
-  describe "#collect_offense_cop_names" do
+  describe '#collect_offense_cop_names' do
     subject { cli.collect_offense_cop_names }
 
     before do
-      allow(cli).to receive(:run_rubocop_for_collect) { fixture("rubocop.json") }
+      allow(cli).to receive(:run_rubocop_for_collect) { fixture('rubocop.json') }
     end
 
     let(:expected_cops) do
-      %w(
+      %w[
         Layout/DefEndAlignment
         Layout/EndAlignment
         Naming/MethodName
@@ -53,7 +53,7 @@ end
         Style/GuardClause
         Style/IfUnlessModifier
         Style/StringLiterals
-      )
+      ]
     end
 
     it { should match_array(expected_cops) }

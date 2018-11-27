@@ -1,4 +1,4 @@
-require "rubocop_auto_corrector/version"
+require 'rubocop_auto_corrector/version'
 
 module RubocopAutoCorrector
   class Error < StandardError; end
