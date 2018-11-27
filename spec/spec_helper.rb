@@ -3,7 +3,7 @@ require "rubocop_auto_corrector"
 require "rubocop_auto_corrector/cli"
 require "rspec/temp_dir"
 
-Dir["#{__dir__}/support/**/*.rb"].each {|f| require f }
+Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
