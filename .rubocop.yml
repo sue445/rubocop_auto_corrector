@@ -1,0 +1,8 @@
+AllCops:
+  Exclude:
+    - 'spec/dummy/'
+
+    # via. https://github.com/rubocop-hq/rubocop/blob/v0.60.0/config/default.yml#L60
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
