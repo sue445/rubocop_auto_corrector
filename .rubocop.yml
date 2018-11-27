@@ -8,3 +8,6 @@ AllCops:
     - 'node_modules/**/*'
     - 'vendor/**/*'
     - '.git/**/*'
+
+Layout/IndentHeredoc:
+  Enabled: false
