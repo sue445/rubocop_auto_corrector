@@ -44,7 +44,7 @@ end
     end
 
     let(:expected_cops) do
-      %w(
+      %w[
         Layout/DefEndAlignment
         Layout/EndAlignment
         Naming/MethodName
@@ -53,7 +53,7 @@ end
         Style/GuardClause
         Style/IfUnlessModifier
         Style/StringLiterals
-      )
+      ]
     end
 
     it { should match_array(expected_cops) }
