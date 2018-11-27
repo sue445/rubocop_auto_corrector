@@ -2,7 +2,7 @@ AllCops:
   TargetRubyVersion: 2.2
 
   Exclude:
-    - 'spec/dummy/'
+    - 'spec/dummy/**/*.rb'
 
     # via. https://github.com/rubocop-hq/rubocop/blob/v0.60.0/config/default.yml#L60
     - 'node_modules/**/*'
