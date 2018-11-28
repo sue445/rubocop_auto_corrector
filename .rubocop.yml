@@ -13,3 +13,6 @@ AllCops:
 
 Layout/IndentHeredoc:
   Enabled: false
+
+RSpec/DescribedClass:
+  Enabled: false

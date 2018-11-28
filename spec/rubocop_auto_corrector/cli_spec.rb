@@ -4,7 +4,7 @@ RSpec.describe RubocopAutoCorrector::CLI do
   describe '#perform' do
     subject { cli.perform }
 
-    include_context :setup_dummy_repo
+    include_context 'setup dummy repo'
 
     it 'auto correct and commit' do
       subject
@@ -56,7 +56,7 @@ end
       ]
     end
 
-    it { should match_array(expected_cops) }
+    it { is_expected.to match_array(expected_cops) }
   end
 
   describe '#auto_correctable?' do
@@ -72,7 +72,7 @@ end
     end
 
     with_them do
-      it { should eq expected }
+      it { is_expected.to eq expected }
     end
   end
 end
