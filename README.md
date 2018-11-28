@@ -3,6 +3,7 @@
 Run `rubocop --auto-correct && git commit` with each cop.
 
 [![Gem Version](https://badge.fury.io/rb/rubocop_auto_corrector.svg)](https://badge.fury.io/rb/rubocop_auto_corrector)
+[![Build Status](https://travis-ci.org/sue445/rubocop_auto_corrector.svg?branch=master)](https://travis-ci.org/sue445/rubocop_auto_corrector)
 
 # Example
 See https://github.com/sue445/rubocop_auto_corrector/pull/3/commits
