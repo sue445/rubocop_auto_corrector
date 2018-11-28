@@ -31,4 +31,4 @@ matrix:
     - rvm: ruby-head
 env:
   global:
-    - CC_TEST_REPORTER_ID=
+    - CC_TEST_REPORTER_ID=ae386af24f1ca076680045ecadf328fc77fd71bf6c014b5503d406d8bd87c42a
