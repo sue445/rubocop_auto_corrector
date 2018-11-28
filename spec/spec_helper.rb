@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'rubocop_auto_corrector'
 require 'rubocop_auto_corrector/cli'
 require 'rspec/temp_dir'
+require 'rspec/parameterized'
 
 Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }
 
