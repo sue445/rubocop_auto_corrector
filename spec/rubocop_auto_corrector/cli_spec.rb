@@ -4,7 +4,7 @@ RSpec.describe RubocopAutoCorrector::CLI do
   describe '#perform' do
     subject { cli.perform }
 
-    include_context :setup_dummy_repo
+    include_context 'setup dummy repo'
 
     it 'auto correct and commit' do
       subject

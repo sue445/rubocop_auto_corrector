@@ -1,4 +1,4 @@
-RSpec.shared_context :setup_dummy_repo do
+RSpec.shared_context 'setup dummy repo' do
   include_context 'within temp dir'
 
   before do
