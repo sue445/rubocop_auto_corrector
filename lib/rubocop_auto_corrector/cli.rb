@@ -1,6 +1,7 @@
 module RubocopAutoCorrector
   require 'json'
   require 'yaml'
+  require 'rubocop'
 
   class CLI
     DEFAULT_ORDER = 100
@@ -12,7 +13,11 @@ module RubocopAutoCorrector
     end
 
     def perform
-      cop_names = collect_offense_cop_names.sort_by { |cop_name| [cop_order(cop_name), cop_name] }
+      cop_names =
+        collect_offense_cop_names
+        .select { |cop_name| auto_correctable?(cop_name) }
+        .sort_by { |cop_name| [cop_order(cop_name), cop_name] }
+
       cop_names.each do |cop_name|
         if (reason = exclude_reason(cop_name))
           puts reason
@@ -31,6 +36,23 @@ module RubocopAutoCorrector
         cop_names += file['offenses'].map { |offense| offense['cop_name'] }
       end
       cop_names.uniq
+    end
+
+    def auto_correctable?(cop_name)
+      cop_class_name = "::RuboCop::Cop::#{cop_name.gsub('/', '::')}"
+      plugin_name = "rubocop-#{cop_name.split('/').first.downcase}"
+
+      begin
+        Object.new.instance_eval <<-RUBY
+          begin
+            require '#{plugin_name}'
+          rescue LoadError
+          end
+          #{cop_class_name}.new.respond_to?(:autocorrect)
+        RUBY
+      rescue NameError
+        false
+      end
     end
 
     private
