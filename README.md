@@ -1,8 +1,9 @@
 # RubocopAutoCorrector
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rubocop_auto_corrector`. To experiment with that code, run `bin/console` for an interactive prompt.
+Run `rubocop --auto-correct && git commit` with each cop.
 
-TODO: Delete this and the text above, and describe your gem
+# Example
+See https://github.com/sue445/rubocop_auto_corrector/pull/3/commits
 
 ## Installation
 
@@ -21,8 +22,16 @@ Or install it yourself as:
     $ gem install rubocop_auto_corrector
 
 ## Usage
+```bash
+$ bundle exec rubocop_auto_corrector
+```
 
-TODO: Write usage instructions here
+## Help
+```bash
+$ bundle exec rubocop_auto_corrector --help
+Usage: rubocop_auto_corrector [options]
+        --auto-correct-count COUNT   Run `rubocop --auto-correct` and `git commit` for this number of times. (default. 2)
+```
 
 ## Development
 
@@ -32,7 +41,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rubocop_auto_corrector.
+Bug reports and pull requests are welcome on GitHub at https://github.com/sue445/rubocop_auto_corrector.
 
 ## License
 
