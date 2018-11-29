@@ -75,4 +75,46 @@ end
       it { is_expected.to eq expected }
     end
   end
+
+  describe '#rubocop_gem_name' do
+    subject { cli.rubocop_gem_name(cop_name) }
+
+    using RSpec::Parameterized::TableSyntax
+
+    where(:cop_name, :gem_name) do
+      'Layout/AccessModifierIndentation'  | 'rubocop'
+      'Metrics/AbcSize'                   | 'rubocop'
+      'Rails/ActionFilter'                | 'rubocop'
+      'Rails/HttpStatus'                  | 'rubocop-rspec'
+      'RSpec/AlignLeftLetBrace'           | 'rubocop-rspec'
+      'FactoryBot/CreateList'             | 'rubocop-rspec'
+      'Capybara/CurrentPathExpectation'   | 'rubocop-rspec'
+      'Itamae/CdInExecute'                | 'rubocop-itamae'
+    end
+
+    with_them do
+      it { is_expected.to eq gem_name }
+    end
+  end
+
+  describe '#rubocop_cop_class' do
+    subject { cli.rubocop_cop_class(cop_name) }
+
+    using RSpec::Parameterized::TableSyntax
+
+    where(:cop_name, :cop_class) do
+      'Layout/AccessModifierIndentation'  | '::RuboCop::Cop::Layout::AccessModifierIndentation'
+      'Metrics/AbcSize'                   | '::RuboCop::Cop::Metrics::AbcSize'
+      'Rails/ActionFilter'                | '::RuboCop::Cop::Rails::ActionFilter'
+      'Rails/HttpStatus'                  | '::RuboCop::Cop::RSpec::Rails::HttpStatus'
+      'RSpec/AlignLeftLetBrace'           | '::RuboCop::Cop::RSpec::AlignLeftLetBrace'
+      'FactoryBot/CreateList'             | '::RuboCop::Cop::RSpec::FactoryBot::CreateList'
+      'Capybara/CurrentPathExpectation'   | '::RuboCop::Cop::RSpec::Capybara::CurrentPathExpectation'
+      'Itamae/CdInExecute'                | '::RuboCop::Cop::Itamae::CdInExecute'
+    end
+
+    with_them do
+      it { is_expected.to eq cop_class }
+    end
+  end
 end

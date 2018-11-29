@@ -55,6 +55,16 @@ module RubocopAutoCorrector
       end
     end
 
+    def rubocop_gem_name(cop_name)
+      gem_name, = rubocop_cop_info(cop_name)
+      gem_name
+    end
+
+    def rubocop_cop_class(cop_name)
+      _, cop_class = rubocop_cop_info(cop_name)
+      cop_class
+    end
+
     private
 
     def run_and_commit(command)
@@ -72,6 +82,24 @@ module RubocopAutoCorrector
 
     def exclude_reason(cop_name)
       @exclude_cops[cop_name]
+    end
+
+    def rubocop_cop_info(cop_name)
+      cop_class_suffix = cop_name.gsub('/', '::')
+
+      case cop_name
+      when %r{^RSpec/}
+        ['rubocop-rspec', "::RuboCop::Cop::#{cop_class_suffix}"]
+      when %r{^(FactoryBot|Capybara)/}, 'Rails/HttpStatus'
+        ['rubocop-rspec', "::RuboCop::Cop::RSpec::#{cop_class_suffix}"]
+      when %r{^(Layout|Lint|Metrics|Naming|Performance|Rails|Security|Style|Bundler|Gemspec)/}
+        # Official cops
+        ['rubocop', "::RuboCop::Cop::#{cop_class_suffix}"]
+      else
+        # Unknown cops
+        department = cop_name.split('/').first.downcase
+        ["rubocop-#{department}", "::RuboCop::Cop::#{cop_class_suffix}"]
+      end
     end
   end
 end
