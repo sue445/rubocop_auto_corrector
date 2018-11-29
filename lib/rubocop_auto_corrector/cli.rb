@@ -2,6 +2,7 @@ module RubocopAutoCorrector
   require 'json'
   require 'yaml'
   require 'rubocop'
+  require 'rubocop_auto_corrector'
 
   class CLI
     DEFAULT_ORDER = 100
@@ -38,21 +39,13 @@ module RubocopAutoCorrector
       cop_names.uniq
     end
 
+    # Whether this cop is auto correctable
+    #
+    # @param cop_name [String]
+    #
+    # @return [Boolean]
     def auto_correctable?(cop_name)
-      cop_class_name = "::RuboCop::Cop::#{cop_name.gsub('/', '::')}"
-      plugin_name = "rubocop-#{cop_name.split('/').first.downcase}"
-
-      begin
-        Object.new.instance_eval <<-RUBY
-          begin
-            require '#{plugin_name}'
-          rescue LoadError
-          end
-          #{cop_class_name}.new.respond_to?(:autocorrect)
-        RUBY
-      rescue NameError
-        false
-      end
+      RubocopAutoCorrector::CopFinder.new(cop_name).auto_correctable?
     end
 
     private

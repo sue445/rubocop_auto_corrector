@@ -58,21 +58,4 @@ end
 
     it { is_expected.to match_array(expected_cops) }
   end
-
-  describe '#auto_correctable?' do
-    subject { cli.auto_correctable?(cop_name) }
-
-    using RSpec::Parameterized::TableSyntax
-
-    where(:cop_name, :expected) do
-      'Layout/AccessModifierIndentation'  | true
-      'Metrics/AbcSize'                   | false
-      'RSpec/FactoryBot/CreateList'       | true
-      'Aaaaa/Invalid'                     | false
-    end
-
-    with_them do
-      it { is_expected.to eq expected }
-    end
-  end
 end
