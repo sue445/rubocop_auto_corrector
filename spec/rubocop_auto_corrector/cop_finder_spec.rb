@@ -11,6 +11,7 @@ RSpec.describe RubocopAutoCorrector::CopFinder do
       'Metrics/AbcSize'                   | false
       'FactoryBot/CreateList'             | true
       'Aaaaa/Invalid'                     | false
+      'ThreadSafety/NewThread'            | false
     end
 
     with_them do
@@ -32,6 +33,7 @@ RSpec.describe RubocopAutoCorrector::CopFinder do
       'FactoryBot/CreateList'             | 'rubocop-rspec'
       'Capybara/CurrentPathExpectation'   | 'rubocop-rspec'
       'Itamae/CdInExecute'                | 'rubocop-itamae'
+      'ThreadSafety/NewThread'            | 'rubocop-thread_safety'
     end
 
     with_them do
@@ -53,6 +55,7 @@ RSpec.describe RubocopAutoCorrector::CopFinder do
       'FactoryBot/CreateList'             | '::RuboCop::Cop::RSpec::FactoryBot::CreateList'
       'Capybara/CurrentPathExpectation'   | '::RuboCop::Cop::RSpec::Capybara::CurrentPathExpectation'
       'Itamae/CdInExecute'                | '::RuboCop::Cop::Itamae::CdInExecute'
+      'ThreadSafety/NewThread'            | '::RuboCop::Cop::ThreadSafety::NewThread'
     end
 
     with_them do
