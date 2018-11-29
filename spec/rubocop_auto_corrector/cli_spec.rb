@@ -67,7 +67,7 @@ end
     where(:cop_name, :expected) do
       'Layout/AccessModifierIndentation'  | true
       'Metrics/AbcSize'                   | false
-      'RSpec/FactoryBot/CreateList'       | true
+      'FactoryBot/CreateList'             | true
       'Aaaaa/Invalid'                     | false
     end
 

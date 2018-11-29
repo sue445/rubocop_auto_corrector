@@ -39,8 +39,8 @@ module RubocopAutoCorrector
     end
 
     def auto_correctable?(cop_name)
-      cop_class_name = "::RuboCop::Cop::#{cop_name.gsub('/', '::')}"
-      plugin_name = "rubocop-#{cop_name.split('/').first.downcase}"
+      cop_class_name = rubocop_cop_class(cop_name)
+      plugin_name = rubocop_gem_name(cop_name)
 
       begin
         Object.new.instance_eval <<-RUBY
