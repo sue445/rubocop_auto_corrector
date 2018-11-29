@@ -2,6 +2,7 @@ module RubocopAutoCorrector
   require 'json'
   require 'yaml'
   require 'rubocop'
+  require 'rubocop_auto_corrector'
 
   class CLI
     DEFAULT_ORDER = 100
@@ -38,31 +39,13 @@ module RubocopAutoCorrector
       cop_names.uniq
     end
 
+    # Whether this cop is auto correctable
+    #
+    # @param cop_name [String]
+    #
+    # @return [Boolean]
     def auto_correctable?(cop_name)
-      cop_class_name = rubocop_cop_class(cop_name)
-      plugin_name = rubocop_gem_name(cop_name)
-
-      begin
-        Object.new.instance_eval <<-RUBY
-          begin
-            require '#{plugin_name}'
-          rescue LoadError
-          end
-          #{cop_class_name}.new.respond_to?(:autocorrect)
-        RUBY
-      rescue NameError
-        false
-      end
-    end
-
-    def rubocop_gem_name(cop_name)
-      gem_name, = rubocop_cop_info(cop_name)
-      gem_name
-    end
-
-    def rubocop_cop_class(cop_name)
-      _, cop_class = rubocop_cop_info(cop_name)
-      cop_class
+      RubocopAutoCorrector::CopFinder.new(cop_name).auto_correctable?
     end
 
     private
@@ -82,24 +65,6 @@ module RubocopAutoCorrector
 
     def exclude_reason(cop_name)
       @exclude_cops[cop_name]
-    end
-
-    def rubocop_cop_info(cop_name)
-      cop_class_suffix = cop_name.gsub('/', '::')
-
-      case cop_name
-      when %r{^RSpec/}
-        ['rubocop-rspec', "::RuboCop::Cop::#{cop_class_suffix}"]
-      when %r{^(FactoryBot|Capybara)/}, 'Rails/HttpStatus'
-        ['rubocop-rspec', "::RuboCop::Cop::RSpec::#{cop_class_suffix}"]
-      when %r{^(Layout|Lint|Metrics|Naming|Performance|Rails|Security|Style|Bundler|Gemspec)/}
-        # Official cops
-        ['rubocop', "::RuboCop::Cop::#{cop_class_suffix}"]
-      else
-        # Unknown cops
-        department = cop_name.split('/').first.downcase
-        ["rubocop-#{department}", "::RuboCop::Cop::#{cop_class_suffix}"]
-      end
     end
   end
 end
