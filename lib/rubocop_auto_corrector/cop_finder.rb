@@ -48,8 +48,9 @@ module RubocopAutoCorrector
         ['rubocop', "::RuboCop::Cop::#{cop_class_suffix}"]
       else
         # Unknown cops
-        department = cop_name.split('/').first.downcase
-        ["rubocop-#{department}", "::RuboCop::Cop::#{cop_class_suffix}"]
+        department_camel = cop_name.split('/').first
+        department_snake = department_camel.gsub(/(?<=.)([A-Z])/) { |s| "_#{s}" }.downcase
+        ["rubocop-#{department_snake}", "::RuboCop::Cop::#{cop_class_suffix}"]
       end
     end
   end
