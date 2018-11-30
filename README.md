@@ -15,7 +15,9 @@ See https://github.com/sue445/rubocop_auto_corrector/pull/3/commits
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rubocop_auto_corrector'
+group :development do
+  gem 'rubocop_auto_corrector', require: false
+end
 ```
 
 And then execute:
