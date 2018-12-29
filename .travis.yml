@@ -6,7 +6,7 @@ rvm:
   - 2.3
   - 2.4
   - 2.5
-  - 2.6.0
+  - 2.6
   - ruby-head
 bundler_args: "--jobs=4"
 before_install:
@@ -29,6 +29,11 @@ notifications:
 matrix:
   allow_failures:
     - rvm: ruby-head
+  include:
+    - rvm: 2.6
+      env: RUBYOPT="--jit"
+    - rvm: ruby-head
+      env: RUBYOPT="--jit"
 env:
   global:
     - CC_TEST_REPORTER_ID=ae386af24f1ca076680045ecadf328fc77fd71bf6c014b5503d406d8bd87c42a
