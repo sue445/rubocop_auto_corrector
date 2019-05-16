@@ -43,7 +43,7 @@ module RubocopAutoCorrector
         ['rubocop-rspec', "::RuboCop::Cop::#{cop_class_suffix}"]
       when %r{^(FactoryBot|Capybara)/}, 'Rails/HttpStatus'
         ['rubocop-rspec', "::RuboCop::Cop::RSpec::#{cop_class_suffix}"]
-      when %r{^(Layout|Lint|Metrics|Naming|Performance|Rails|Security|Style|Bundler|Gemspec)/}
+      when %r{^(Layout|Lint|Metrics|Naming|Rails|Security|Style|Bundler|Gemspec)/}
         # Official cops
         ['rubocop', "::RuboCop::Cop::#{cop_class_suffix}"]
       else

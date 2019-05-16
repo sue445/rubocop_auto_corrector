@@ -34,6 +34,7 @@ RSpec.describe RubocopAutoCorrector::CopFinder do
       'Capybara/CurrentPathExpectation'   | 'rubocop-rspec'
       'Itamae/CdInExecute'                | 'rubocop-itamae'
       'ThreadSafety/NewThread'            | 'rubocop-thread_safety'
+      'Performance/Caller'                | 'rubocop-performance'
     end
 
     with_them do
@@ -56,6 +57,7 @@ RSpec.describe RubocopAutoCorrector::CopFinder do
       'Capybara/CurrentPathExpectation'   | '::RuboCop::Cop::RSpec::Capybara::CurrentPathExpectation'
       'Itamae/CdInExecute'                | '::RuboCop::Cop::Itamae::CdInExecute'
       'ThreadSafety/NewThread'            | '::RuboCop::Cop::ThreadSafety::NewThread'
+      'Performance/Caller'                | '::RuboCop::Cop::Performance::Caller'
     end
 
     with_them do
