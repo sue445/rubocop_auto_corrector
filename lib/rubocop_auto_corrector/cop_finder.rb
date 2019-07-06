@@ -12,7 +12,7 @@ module RubocopAutoCorrector
     # Whether this cop is auto correctable
     # @return [Boolean]
     def auto_correctable?
-      Object.new.instance_eval <<-RUBY
+      Object.new.instance_eval <<-RUBY, __FILE__, __LINE__ + 1
         begin
           require '#{gem_name}'
         rescue LoadError

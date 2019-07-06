@@ -24,8 +24,3 @@ Style/Documentation:
     - 'test/**/*'
     - 'lib/rubocop_auto_corrector/cli.rb'
     - 'lib/rubocop_auto_corrector/cop_finder.rb'
-
-# Offense count: 1
-Style/EvalWithLocation:
-  Exclude:
-    - 'lib/rubocop_auto_corrector/cop_finder.rb'
