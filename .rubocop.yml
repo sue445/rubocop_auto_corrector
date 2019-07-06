@@ -1,0 +1,10 @@
+AllCops:
+  TargetRubyVersion: 2.3
+
+  Exclude:
+    - 'spec/dummy/**/*'
+
+    # c.f. https://github.com/rubocop-hq/rubocop/blob/v0.72.0/config/default.yml#L60-L63
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
