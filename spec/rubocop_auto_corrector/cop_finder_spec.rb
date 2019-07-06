@@ -27,7 +27,7 @@ RSpec.describe RubocopAutoCorrector::CopFinder do
     where(:cop_name, :gem_name) do
       'Layout/AccessModifierIndentation'  | 'rubocop'
       'Metrics/AbcSize'                   | 'rubocop'
-      'Rails/ActionFilter'                | 'rubocop'
+      'Rails/ActionFilter'                | 'rubocop-rails'
       'Rails/HttpStatus'                  | 'rubocop-rspec'
       'RSpec/AlignLeftLetBrace'           | 'rubocop-rspec'
       'FactoryBot/CreateList'             | 'rubocop-rspec'
