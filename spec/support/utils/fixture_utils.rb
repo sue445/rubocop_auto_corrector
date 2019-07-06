@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FixtureUtils
   def fixture(file)
     spec_dir.join('support', 'fixtures', file).read

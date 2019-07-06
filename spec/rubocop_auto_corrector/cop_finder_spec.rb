@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe RubocopAutoCorrector::CopFinder do
   let(:finder) { RubocopAutoCorrector::CopFinder.new(cop_name) }
 

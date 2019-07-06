@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe './exe/rubocop_auto_corrector' do
   include_context 'setup dummy repo'
 

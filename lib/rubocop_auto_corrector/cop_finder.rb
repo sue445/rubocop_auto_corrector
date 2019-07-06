@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RubocopAutoCorrector
   class CopFinder
     attr_reader :cop_name

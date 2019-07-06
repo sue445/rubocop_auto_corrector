@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe RubocopAutoCorrector::CLI do
   let(:cli) { RubocopAutoCorrector::CLI.new }
 
