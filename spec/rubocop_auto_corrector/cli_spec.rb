@@ -16,18 +16,18 @@ RSpec.describe RubocopAutoCorrector::CLI do
       rubocop_commits = git_log.each_line.reject { |line| line =~ /Initial commit/ }
 
       aggregate_failures do
-        expect(example1).to eq(<<-RUBY)
-def badName
-  test if something
-end
+        expect(example1).to eq(<<~RUBY)
+          def badName
+            test if something
+          end
         RUBY
 
-        expect(example2).to eq(<<-RUBY)
-class Foo
-  def self.someMethod
-    puts 'test'
-  end
-end
+        expect(example2).to eq(<<~RUBY)
+          class Foo
+            def self.someMethod
+              puts 'test'
+            end
+          end
         RUBY
 
         expect(rubocop_commits.count).to be >= 1
