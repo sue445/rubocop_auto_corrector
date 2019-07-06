@@ -37,6 +37,7 @@ module RubocopAutoCorrector
 
     private
 
+    # rubocop:disable Metrics/MethodLength
     def rubocop_cop_info
       cop_class_suffix = cop_name.gsub('/', '::')
 
@@ -55,5 +56,6 @@ module RubocopAutoCorrector
         ["rubocop-#{department_snake}", "::RuboCop::Cop::#{cop_class_suffix}"]
       end
     end
+    # rubocop:enable Metrics/MethodLength
   end
 end

@@ -16,10 +16,8 @@ module RubocopAutoCorrector
     end
 
     def perform
-      cop_names =
-        collect_offense_cop_names
-        .select { |cop_name| auto_correctable?(cop_name) }
-        .sort_by { |cop_name| [cop_order(cop_name), cop_name] }
+      cop_names = collect_offense_cop_names.select { |cop_name| auto_correctable?(cop_name) }
+                                           .sort_by { |cop_name| [cop_order(cop_name), cop_name] }
 
       cop_names.each do |cop_name|
         if (reason = exclude_reason(cop_name))
