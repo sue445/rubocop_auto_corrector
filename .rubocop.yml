@@ -13,3 +13,6 @@ AllCops:
 
 Metrics/LineLength:
   Max: 110
+
+Style/Documentation:
+  Enabled: false

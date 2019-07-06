@@ -16,11 +16,3 @@ Metrics/BlockLength:
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/MethodLength:
   Max: 13
-
-# Offense count: 3
-Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'lib/rubocop_auto_corrector/cli.rb'
-    - 'lib/rubocop_auto_corrector/cop_finder.rb'
