@@ -17,6 +17,7 @@ before_script:
   - ./cc-test-reporter before-build
 script:
   - RUBYOPT=$RSPEC_RUBYOPT bundle exec rspec
+  - bundle exec rubocop -P
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 branches:
