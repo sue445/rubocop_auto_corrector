@@ -29,10 +29,3 @@ Style/Documentation:
 Style/EvalWithLocation:
   Exclude:
     - 'lib/rubocop_auto_corrector/cop_finder.rb'
-
-# Offense count: 20
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-# URISchemes: http, https
-Metrics/LineLength:
-  Max: 169

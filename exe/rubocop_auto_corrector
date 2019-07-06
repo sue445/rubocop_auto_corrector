@@ -11,7 +11,13 @@ params = {
 }
 
 Version = RubocopAutoCorrector::VERSION
-opt.on('--auto-correct-count COUNT', 'Run `rubocop --auto-correct` and `git commit` for this number of times. (default. 2)') { |v| params[:auto_correct_count] = v.to_i }
+
+opt.on(
+  '--auto-correct-count COUNT',
+  'Run `rubocop --auto-correct` and `git commit` for this number of times. (default. 2)'
+) do |v|
+  params[:auto_correct_count] = v.to_i
+end
 
 opt.parse!(ARGV)
 

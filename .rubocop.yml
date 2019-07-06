@@ -10,3 +10,6 @@ AllCops:
     - 'node_modules/**/*'
     - 'vendor/**/*'
     - '.git/**/*'
+
+Metrics/LineLength:
+  Max: 110
