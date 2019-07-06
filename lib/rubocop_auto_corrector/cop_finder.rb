@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RubocopAutoCorrector
   class CopFinder
     attr_reader :cop_name
@@ -10,7 +12,7 @@ module RubocopAutoCorrector
     # Whether this cop is auto correctable
     # @return [Boolean]
     def auto_correctable?
-      Object.new.instance_eval <<-RUBY
+      Object.new.instance_eval <<-RUBY, __FILE__, __LINE__ + 1
         begin
           require '#{gem_name}'
         rescue LoadError
@@ -35,6 +37,7 @@ module RubocopAutoCorrector
 
     private
 
+    # rubocop:disable Metrics/MethodLength
     def rubocop_cop_info
       cop_class_suffix = cop_name.gsub('/', '::')
 
@@ -53,5 +56,6 @@ module RubocopAutoCorrector
         ["rubocop-#{department_snake}", "::RuboCop::Cop::#{cop_class_suffix}"]
       end
     end
+    # rubocop:enable Metrics/MethodLength
   end
 end

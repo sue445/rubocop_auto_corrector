@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.shared_context 'setup dummy repo' do
   include_context 'within temp dir'
 
