@@ -14,7 +14,7 @@ Metrics/BlockLength:
     - '*.gemspec'
     - 'spec/**/*_spec.rb'
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 110
 
 Style/Documentation:
