@@ -35,9 +35,9 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 2.3.0'
+  spec.required_ruby_version = '>= 2.4.0'
 
-  spec.add_dependency 'rubocop', '>= 0.72.0'
+  spec.add_dependency 'rubocop', '>= 0.82.0'
 
   spec.add_development_dependency 'bundler', '>= 1.17'
   spec.add_development_dependency 'coveralls'
@@ -46,6 +46,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-parameterized'
   spec.add_development_dependency 'rspec-temp_dir', '>= 1.1.0'
   spec.add_development_dependency 'rubocop-rspec'
-  spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'simplecov', '< 0.18.0'
   spec.add_development_dependency 'unparser', '>= 0.4.5'
 end
