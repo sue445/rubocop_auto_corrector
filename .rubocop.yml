@@ -9,6 +9,8 @@ AllCops:
     - 'vendor/**/*'
     - '.git/**/*'
 
+  NewCops: enable
+
 Metrics/BlockLength:
   Exclude:
     - '*.gemspec'
