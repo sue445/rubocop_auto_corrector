@@ -3,7 +3,15 @@
 RSpec.describe './exe/rubocop_auto_corrector' do
   include_context 'setup dummy repo'
 
-  it 'running' do
-    system! "#{spec_dir}/../exe/rubocop_auto_corrector"
+  context 'without arg' do
+    it 'running' do
+      system! "#{spec_dir}/../exe/rubocop_auto_corrector"
+    end
+  end
+
+  context 'with --all' do
+    it 'running' do
+      system! "#{spec_dir}/../exe/rubocop_auto_corrector --all"
+    end
   end
 end
