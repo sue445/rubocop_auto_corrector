@@ -15,7 +15,9 @@ module RubocopAutoCorrector
       @exclude_cops = data['exclude_cops']
     end
 
-    def perform
+    def perform(auto_collect_all)
+      rubocop_option = auto_collect_all ? '--auto-correct-all' : '--auto-correct'
+
       cop_names = collect_offense_cop_names.select { |cop_name| auto_correctable?(cop_name) }
                                            .sort_by { |cop_name| [cop_order(cop_name), cop_name] }
 
@@ -25,7 +27,7 @@ module RubocopAutoCorrector
           next
         end
 
-        run_and_commit "rubocop --auto-correct --only #{cop_name}"
+        run_and_commit "rubocop #{rubocop_option} --only #{cop_name}"
       end
     end
 

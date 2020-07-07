@@ -7,7 +7,8 @@ require 'optparse'
 
 opt = OptionParser.new
 params = {
-  auto_correct_count: 2
+  auto_correct_count: 2,
+  auto_correct_all: false
 }
 
 Version = RubocopAutoCorrector::VERSION
@@ -19,10 +20,14 @@ opt.on(
   params[:auto_correct_count] = v.to_i
 end
 
+opt.on('--all', 'Whether run `rubocop` with `--auto-correct-all`. (default. run with `--auto-correct`)') do
+  params[:auto_correct_all] = true
+end
+
 opt.parse!(ARGV)
 
 cli = RubocopAutoCorrector::CLI.new
 
 params[:auto_correct_count].times do
-  cli.perform
+  cli.perform(params[:auto_correct_all])
 end
