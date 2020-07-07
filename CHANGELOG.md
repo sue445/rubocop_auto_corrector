@@ -1,5 +1,14 @@
 ## master
-[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.3.0...master)
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.0...master)
+
+## v0.4.0
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.3.0...v0.4.0)
+
+* Add `--all` option for `rubocop --auto-correct-all`
+  * https://github.com/sue445/rubocop_auto_corrector/pull/34
+  * When `--all` arg is passed to `rubocop_auto_corrector` (e.g. `rubocop_auto_corrector --all`), run `rubocop --auto-correct-all && git commit` with each cop.
+* Upgrade rubocop and drop support ruby 2.3
+  * https://github.com/sue445/rubocop_auto_corrector/pull/31
 
 ## v0.3.0
 [full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.2.0...v0.3.0)
