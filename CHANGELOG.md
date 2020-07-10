@@ -1,5 +1,11 @@
 ## master
-[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.0...master)
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.1...master)
+
+## v0.4.1
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.0...v0.4.1)
+
+* Fixed. `auto_correctable?` doesn't work when cop has `.support_autocorrect?` and doesn't have `#autocorrect`
+  * https://github.com/sue445/rubocop_auto_corrector/pull/35
 
 ## v0.4.0
 [full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.3.0...v0.4.0)
