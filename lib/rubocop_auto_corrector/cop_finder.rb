@@ -17,6 +17,8 @@ module RubocopAutoCorrector
           require '#{gem_name}'
         rescue LoadError
         end
+
+        return #{cop_class_name}.support_autocorrect? if #{cop_class_name}.respond_to?(:support_autocorrect?)
         #{cop_class_name}.new.respond_to?(:autocorrect)
       RUBY
     rescue NameError
