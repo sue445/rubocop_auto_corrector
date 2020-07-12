@@ -61,7 +61,6 @@ jobs:
         with:
           codeclimate-test-reporter-id: ${{ secrets.CC_TEST_REPORTER_ID }}
           command: before-build
-        if: matrix.ruby >= 'ruby:2.4'
         continue-on-error: true
 
       - name: Set up git
