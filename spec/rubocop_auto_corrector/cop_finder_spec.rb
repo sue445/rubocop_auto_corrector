@@ -30,13 +30,20 @@ RSpec.describe RubocopAutoCorrector::CopFinder do
       'Layout/AccessModifierIndentation'  | 'rubocop'
       'Metrics/AbcSize'                   | 'rubocop'
       'Rails/ActionFilter'                | 'rubocop-rails'
-      'Rails/HttpStatus'                  | 'rubocop-rspec'
       'RSpec/AlignLeftLetBrace'           | 'rubocop-rspec'
-      'FactoryBot/CreateList'             | 'rubocop-rspec'
-      'Capybara/CurrentPathExpectation'   | 'rubocop-rspec'
       'Itamae/CdInExecute'                | 'rubocop-itamae'
       'ThreadSafety/NewThread'            | 'rubocop-thread_safety'
       'Performance/Caller'                | 'rubocop-performance'
+
+      # for rubocop-rspec < v2
+      'Capybara/CurrentPathExpectation'   | 'rubocop-rspec'
+      'FactoryBot/CreateList'             | 'rubocop-rspec'
+      'Rails/HttpStatus'                  | 'rubocop-rspec'
+
+      # for. rubocop-rspec >= v2
+      'RSpec/Capybara/CurrentPathExpectation' | 'rubocop-rspec'
+      'RSpec/FactoryBot/CreateList'           | 'rubocop-rspec'
+      'RSpec/Rails/HttpStatus'                | 'rubocop-rspec'
     end
 
     with_them do
