@@ -27,18 +27,18 @@ RSpec.describe RubocopAutoCorrector::CopFinder do
     using RSpec::Parameterized::TableSyntax
 
     where(:cop_name, :gem_name) do
-      'Layout/AccessModifierIndentation'  | 'rubocop'
-      'Metrics/AbcSize'                   | 'rubocop'
-      'Rails/ActionFilter'                | 'rubocop-rails'
-      'RSpec/AlignLeftLetBrace'           | 'rubocop-rspec'
-      'Itamae/CdInExecute'                | 'rubocop-itamae'
-      'ThreadSafety/NewThread'            | 'rubocop-thread_safety'
-      'Performance/Caller'                | 'rubocop-performance'
+      'Layout/AccessModifierIndentation' | 'rubocop'
+      'Metrics/AbcSize'                  | 'rubocop'
+      'Rails/ActionFilter'               | 'rubocop-rails'
+      'RSpec/AlignLeftLetBrace'          | 'rubocop-rspec'
+      'Itamae/CdInExecute'               | 'rubocop-itamae'
+      'ThreadSafety/NewThread'           | 'rubocop-thread_safety'
+      'Performance/Caller'               | 'rubocop-performance'
 
       # for rubocop-rspec < v2
-      'Capybara/CurrentPathExpectation'   | 'rubocop-rspec'
-      'FactoryBot/CreateList'             | 'rubocop-rspec'
-      'Rails/HttpStatus'                  | 'rubocop-rspec'
+      'Capybara/CurrentPathExpectation' | 'rubocop-rspec'
+      'FactoryBot/CreateList'           | 'rubocop-rspec'
+      'Rails/HttpStatus'                | 'rubocop-rspec'
 
       # for. rubocop-rspec >= v2
       'RSpec/Capybara/CurrentPathExpectation' | 'rubocop-rspec'
