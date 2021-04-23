@@ -1,5 +1,6 @@
 AllCops:
-  TargetRubyVersion: 2.4
+  # rubocop 1.13.0+ requires ruby 2.5+
+  TargetRubyVersion: 2.5
 
   Exclude:
     - 'spec/dummy/**/*'
@@ -10,6 +11,7 @@ AllCops:
     - '.git/**/*'
 
   NewCops: enable
+  SuggestExtensions: false
 
 Metrics/BlockLength:
   Exclude:
