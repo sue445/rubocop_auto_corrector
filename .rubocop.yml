@@ -11,6 +11,7 @@ AllCops:
     - '.git/**/*'
 
   NewCops: enable
+  SuggestExtensions: false
 
 Metrics/BlockLength:
   Exclude:
