@@ -1,5 +1,11 @@
 ## master
-[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.2...master)
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.3...master)
+
+## v0.4.3
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.2...v0.4.3)
+
+* Enable MFA requirement for gem releasing
+  * https://github.com/sue445/rubocop_auto_corrector/pull/44
 
 ## v0.4.2
 [full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.1...v0.4.2)
