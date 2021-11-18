@@ -21,9 +21,10 @@ Gem::Specification.new do |spec|
     spec.metadata['homepage_uri'] = spec.homepage
     spec.metadata['source_code_uri'] = spec.homepage
     spec.metadata['changelog_uri'] = "#{spec.homepage}/blob/master/CHANGELOG.md"
+    spec.metadata['rubygems_mfa_required'] = 'true'
   else
     raise 'RubyGems 2.0 or newer is required to protect against ' \
-      'public gem pushes.'
+          'public gem pushes.'
   end
 
   # Specify which files should be added to the gem when it is released.
@@ -45,6 +46,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rspec-parameterized'
   spec.add_development_dependency 'rspec-temp_dir', '>= 1.1.0'
+  spec.add_development_dependency 'rubocop', '>= 1.23.0'
   spec.add_development_dependency 'rubocop-rspec'
   spec.add_development_dependency 'simplecov', '< 0.18.0'
   spec.add_development_dependency 'unparser', '>= 0.4.5'
