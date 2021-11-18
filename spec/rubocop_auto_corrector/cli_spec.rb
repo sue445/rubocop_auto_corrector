@@ -18,7 +18,7 @@ RSpec.describe RubocopAutoCorrector::CLI do
         example2 = File.read('example2.rb')
 
         git_log = `git --no-pager log --oneline`.strip
-        rubocop_commits = git_log.each_line.reject { |line| line =~ /Initial commit/ }
+        rubocop_commits = git_log.each_line.grep_v(/Initial commit/)
 
         aggregate_failures do
           expect(example1).to eq(<<~RUBY)
@@ -51,7 +51,7 @@ RSpec.describe RubocopAutoCorrector::CLI do
         example2 = File.read('example2.rb')
 
         git_log = `git --no-pager log --oneline`.strip
-        rubocop_commits = git_log.each_line.reject { |line| line =~ /Initial commit/ }
+        rubocop_commits = git_log.each_line.grep_v(/Initial commit/)
 
         aggregate_failures do
           expect(example1).to eq(<<~RUBY)
