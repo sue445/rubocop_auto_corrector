@@ -49,22 +49,25 @@ module RubocopAutoCorrector
 
     # rubocop:disable Metrics/MethodLength
     def rubocop_cop_info
+      return @rubocop_cop_info if @rubocop_cop_info
+
       cop_class_suffix = cop_name.gsub('/', '::')
 
-      case cop_name
-      when %r{^RSpec/}
-        ['rubocop-rspec', "::RuboCop::Cop::#{cop_class_suffix}"]
-      when %r{^(FactoryBot|Capybara)/}, 'Rails/HttpStatus'
-        ['rubocop-rspec', "::RuboCop::Cop::RSpec::#{cop_class_suffix}"]
-      when %r{^(Layout|Lint|Metrics|Naming|Security|Style|Bundler|Gemspec)/}
-        # Official cops
-        ['rubocop', "::RuboCop::Cop::#{cop_class_suffix}"]
-      else
-        # Unknown cops
-        department_camel = cop_name.split('/').first
-        department_snake = department_camel.gsub(/(?<=.)([A-Z])/) { |s| "_#{s}" }.downcase
-        ["rubocop-#{department_snake}", "::RuboCop::Cop::#{cop_class_suffix}"]
-      end
+      @rubocop_cop_info =
+        case cop_name
+        when %r{^RSpec/}
+          ['rubocop-rspec', "::RuboCop::Cop::#{cop_class_suffix}"]
+        when %r{^(FactoryBot|Capybara)/}, 'Rails/HttpStatus'
+          ['rubocop-rspec', "::RuboCop::Cop::RSpec::#{cop_class_suffix}"]
+        when %r{^(Layout|Lint|Metrics|Naming|Security|Style|Bundler|Gemspec)/}
+          # Official cops
+          ['rubocop', "::RuboCop::Cop::#{cop_class_suffix}"]
+        else
+          # Unknown cops
+          department_camel = cop_name.split('/').first
+          department_snake = department_camel.gsub(/(?<=.)([A-Z])/) { |s| "_#{s}" }.downcase
+          ["rubocop-#{department_snake}", "::RuboCop::Cop::#{cop_class_suffix}"]
+        end
     end
     # rubocop:enable Metrics/MethodLength
   end
