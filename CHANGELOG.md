@@ -1,5 +1,12 @@
 ## master
-[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.3...master)
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.4...master)
+
+## v0.4.4
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.3...v0.4.4)
+
+* Migrate to `--autocorrect` and requires rubocop 1.3.0+
+  * https://github.com/sue445/rubocop_auto_corrector/pull/48
+  * `--auto-correct-count` is deprecated, use `--autocorrect-count`
 
 ## v0.4.3
 [full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.2...v0.4.3)
