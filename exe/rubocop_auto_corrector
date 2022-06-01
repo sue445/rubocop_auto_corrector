@@ -15,12 +15,12 @@ Version = RubocopAutoCorrector::VERSION
 
 opt.on(
   '--auto-correct-count COUNT',
-  'Run `rubocop --auto-correct` and `git commit` for this number of times. (default. 2)'
+  'Run `rubocop --autocorrect` and `git commit` for this number of times. (default. 2)'
 ) do |v|
   params[:auto_correct_count] = v.to_i
 end
 
-opt.on('--all', 'Whether run `rubocop` with `--auto-correct-all`. (default. run with `--auto-correct`)') do
+opt.on('--all', 'Whether run `rubocop` with `--autocorrect-all`. (default. run with `--autocorrect`)') do
   params[:auto_correct_all] = true
 end
 

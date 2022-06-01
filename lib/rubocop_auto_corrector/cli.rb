@@ -16,7 +16,7 @@ module RubocopAutoCorrector
     end
 
     def perform(auto_collect_all)
-      rubocop_option = auto_collect_all ? '--auto-correct-all' : '--auto-correct'
+      rubocop_option = auto_collect_all ? '--autocorrect-all' : '--autocorrect'
 
       cop_names = collect_offense_cop_names.select { |cop_name| auto_correctable?(cop_name) }
                                            .sort_by { |cop_name| [cop_order(cop_name), cop_name] }
