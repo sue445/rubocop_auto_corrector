@@ -41,8 +41,9 @@ $ bundle exec rubocop_auto_corrector
 ```bash
 $ bundle exec rubocop_auto_corrector --help
 Usage: rubocop_auto_corrector [options]
-        --auto-correct-count COUNT   Run `rubocop --auto-correct` and `git commit` for this number of times. (default. 2)
-        --all                        Whether run `rubocop` with `--auto-correct-all`. (default. run with `--auto-correct`)
+        --autocorrect-count COUNT    Run `rubocop --autocorrect` and `git commit` for this number of times. (default. 2)
+        --auto-correct-count COUNT   Same to '--autocorrect-count' (deprecated)
+        --all                        Whether run `rubocop` with `--autocorrect-all`. (default. run with `--autocorrect`)
 ```
 
 ## Development
