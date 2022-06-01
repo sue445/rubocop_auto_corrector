@@ -1,6 +1,6 @@
 # RubocopAutoCorrector
 
-Run `rubocop --auto-correct && git commit` with each cop.
+Run `rubocop --autocorrect && git commit` with each cop.
 
 [![Gem Version](https://badge.fury.io/rb/rubocop_auto_corrector.svg)](https://badge.fury.io/rb/rubocop_auto_corrector)
 [![Build Status](https://github.com/sue445/rubocop_auto_corrector/workflows/test/badge.svg?branch=master)](https://github.com/sue445/rubocop_auto_corrector/actions?query=workflow%3Atest)

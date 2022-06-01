@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['sue445']
   spec.email         = ['sue445@sue445.net']
 
-  spec.summary       = 'Run `rubocop --auto-correct && git commit` with each cop.'
-  spec.description   = 'Run `rubocop --auto-correct && git commit` with each cop.'
+  spec.summary       = 'Run `rubocop --autocorrect && git commit` with each cop.'
+  spec.description   = 'Run `rubocop --autocorrect && git commit` with each cop.'
   spec.homepage      = 'https://github.com/sue445/rubocop_auto_corrector'
   spec.license       = 'MIT'
 

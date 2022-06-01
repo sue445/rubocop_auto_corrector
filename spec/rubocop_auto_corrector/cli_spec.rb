@@ -36,7 +36,7 @@ RSpec.describe RubocopAutoCorrector::CLI do
           RUBY
 
           expect(rubocop_commits.count).to be >= 1
-          expect(rubocop_commits).to all(match(/^[0-9a-z]{7} :cop: rubocop --auto-correct --only /))
+          expect(rubocop_commits).to all(match(/^[0-9a-z]{7} :cop: rubocop --autocorrect --only /))
         end
       end
     end
@@ -69,7 +69,7 @@ RSpec.describe RubocopAutoCorrector::CLI do
           RUBY
 
           expect(rubocop_commits.count).to be >= 1
-          expect(rubocop_commits).to all(match(/^[0-9a-z]{7} :cop: rubocop --auto-correct-all --only /))
+          expect(rubocop_commits).to all(match(/^[0-9a-z]{7} :cop: rubocop --autocorrect-all --only /))
         end
       end
     end
