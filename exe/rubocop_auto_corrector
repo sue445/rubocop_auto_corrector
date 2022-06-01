@@ -14,13 +14,21 @@ params = {
 Version = RubocopAutoCorrector::VERSION
 
 opt.on(
-  '--auto-correct-count COUNT',
-  'Run `rubocop --auto-correct` and `git commit` for this number of times. (default. 2)'
+  '--autocorrect-count COUNT',
+  'Run `rubocop --autocorrect` and `git commit` for this number of times. (default. 2)'
 ) do |v|
   params[:auto_correct_count] = v.to_i
 end
 
-opt.on('--all', 'Whether run `rubocop` with `--auto-correct-all`. (default. run with `--auto-correct`)') do
+opt.on(
+  '--auto-correct-count COUNT',
+  "Same to '--autocorrect-count' (deprecated)"
+) do |v|
+  puts "[DEPRECATED] '--auto-correct-count' is deprecated, use '--autocorrect-count'"
+  params[:auto_correct_count] = v.to_i
+end
+
+opt.on('--all', 'Whether run `rubocop` with `--autocorrect-all`. (default. run with `--autocorrect`)') do
   params[:auto_correct_all] = true
 end
 

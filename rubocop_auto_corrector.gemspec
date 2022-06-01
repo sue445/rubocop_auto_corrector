@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['sue445']
   spec.email         = ['sue445@sue445.net']
 
-  spec.summary       = 'Run `rubocop --auto-correct && git commit` with each cop.'
-  spec.description   = 'Run `rubocop --auto-correct && git commit` with each cop.'
+  spec.summary       = 'Run `rubocop --autocorrect && git commit` with each cop.'
+  spec.description   = 'Run `rubocop --autocorrect && git commit` with each cop.'
   spec.homepage      = 'https://github.com/sue445/rubocop_auto_corrector'
   spec.license       = 'MIT'
 
@@ -36,9 +36,9 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 2.5.0'
+  spec.required_ruby_version = '>= 2.6.0'
 
-  spec.add_dependency 'rubocop', '>= 1.13.0'
+  spec.add_dependency 'rubocop', '>= 1.3.0'
 
   spec.add_development_dependency 'bundler', '>= 1.17'
   spec.add_development_dependency 'coveralls'

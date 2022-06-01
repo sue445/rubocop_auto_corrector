@@ -12,9 +12,6 @@ on:
   schedule:
     - cron: "0 10 * * 5" # JST 19:00 (Fri)
 
-env:
-  CI: "true"
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -26,7 +23,6 @@ jobs:
 
       matrix:
         ruby:
-          - ruby:2.5
           - ruby:2.6
           - ruby:2.7
           - ruby:3.0
@@ -38,7 +34,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
 
       - name: Cache vendor/bundle
         uses: actions/cache@v1

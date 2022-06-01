@@ -1,6 +1,6 @@
 # RubocopAutoCorrector
 
-Run `rubocop --auto-correct && git commit` with each cop.
+Run `rubocop --autocorrect && git commit` with each cop.
 
 [![Gem Version](https://badge.fury.io/rb/rubocop_auto_corrector.svg)](https://badge.fury.io/rb/rubocop_auto_corrector)
 [![Build Status](https://github.com/sue445/rubocop_auto_corrector/workflows/test/badge.svg?branch=master)](https://github.com/sue445/rubocop_auto_corrector/actions?query=workflow%3Atest)
@@ -41,8 +41,9 @@ $ bundle exec rubocop_auto_corrector
 ```bash
 $ bundle exec rubocop_auto_corrector --help
 Usage: rubocop_auto_corrector [options]
-        --auto-correct-count COUNT   Run `rubocop --auto-correct` and `git commit` for this number of times. (default. 2)
-        --all                        Whether run `rubocop` with `--auto-correct-all`. (default. run with `--auto-correct`)
+        --autocorrect-count COUNT    Run `rubocop --autocorrect` and `git commit` for this number of times. (default. 2)
+        --auto-correct-count COUNT   Same to '--autocorrect-count' (deprecated)
+        --all                        Whether run `rubocop` with `--autocorrect-all`. (default. run with `--autocorrect`)
 ```
 
 ## Development
