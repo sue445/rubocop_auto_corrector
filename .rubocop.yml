@@ -13,6 +13,9 @@ AllCops:
   NewCops: enable
   SuggestExtensions: false
 
+Gemspec/DevelopmentDependencies:
+  EnforcedStyle: gemspec
+
 Metrics/BlockLength:
   Exclude:
     - '*.gemspec'
