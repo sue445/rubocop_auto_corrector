@@ -1,5 +1,11 @@
 ## master
-[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.4...master)
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.5...master)
+
+## v0.4.5
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.4...v0.4.5)
+
+* Requires rubocop 1.30.0+
+  * https://github.com/sue445/rubocop_auto_corrector/pull/67
 
 ## v0.4.4
 [full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.3...v0.4.4)
