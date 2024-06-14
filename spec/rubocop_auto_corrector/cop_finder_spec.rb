@@ -37,14 +37,14 @@ RSpec.describe RubocopAutoCorrector::CopFinder do
       'Performance/Caller'               | [{ gem_name: 'rubocop-performance',   cop_class_name: '::RuboCop::Cop::Performance::Caller' }]
 
       # for rubocop-rspec < v2, v3+
-      'Capybara/CurrentPathExpectation' | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::Capybara::CurrentPathExpectation'}, { gem_name: 'rubocop-capybara',    cop_class_name: '::RuboCop::Cop::Capybara::CurrentPathExpectation'}]
-      'FactoryBot/CreateList'           | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::FactoryBot::CreateList'},           { gem_name: 'rubocop-factory_bot', cop_class_name: '::RuboCop::Cop::FactoryBot::CreateList'}]
-      'Rails/HttpStatus'                | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::Rails::HttpStatus'}]
+      'Capybara/CurrentPathExpectation' | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::Capybara::CurrentPathExpectation' }, { gem_name: 'rubocop-capybara',    cop_class_name: '::RuboCop::Cop::Capybara::CurrentPathExpectation' }]
+      'FactoryBot/CreateList'           | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::FactoryBot::CreateList' },           { gem_name: 'rubocop-factory_bot', cop_class_name: '::RuboCop::Cop::FactoryBot::CreateList' }]
+      'Rails/HttpStatus'                | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::Rails::HttpStatus' }]
 
       # for. rubocop-rspec v2
-      'RSpec/Capybara/CurrentPathExpectation' | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::Capybara::CurrentPathExpectation'}]
-      'RSpec/FactoryBot/CreateList'           | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::FactoryBot::CreateList'}]
-      'RSpec/Rails/HttpStatus'                | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::Rails::HttpStatus'}]
+      'RSpec/Capybara/CurrentPathExpectation' | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::Capybara::CurrentPathExpectation' }]
+      'RSpec/FactoryBot/CreateList'           | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::FactoryBot::CreateList' }]
+      'RSpec/Rails/HttpStatus'                | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::Rails::HttpStatus' }]
     end
     # rubocop:enable Layout/LineLength
 
