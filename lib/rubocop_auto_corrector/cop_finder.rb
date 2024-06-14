@@ -48,7 +48,7 @@ module RubocopAutoCorrector
         [
           {
             gem_name: 'rubocop-rspec',
-            cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}",
+            cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}"
           }
         ]
       when 'Rails/HttpStatus'
@@ -56,7 +56,7 @@ module RubocopAutoCorrector
           # for rubocop-rspec < 2.28.0
           {
             gem_name: 'rubocop-rspec',
-            cop_class_name: "::RuboCop::Cop::RSpec::#{cop_class_suffix}",
+            cop_class_name: "::RuboCop::Cop::RSpec::#{cop_class_suffix}"
           }
         ]
       when %r{^FactoryBot/}
@@ -64,12 +64,12 @@ module RubocopAutoCorrector
           # for rubocop-rspec < 2.0.0
           {
             gem_name: 'rubocop-rspec',
-            cop_class_name: "::RuboCop::Cop::RSpec::#{cop_class_suffix}",
+            cop_class_name: "::RuboCop::Cop::RSpec::#{cop_class_suffix}"
           },
           # for rubocop-rspec v3+
           {
             gem_name: 'rubocop-factory_bot',
-            cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}",
+            cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}"
           }
         ]
       when %r{^Capybara/}
@@ -77,12 +77,12 @@ module RubocopAutoCorrector
           # for rubocop-rspec < 2.0.0
           {
             gem_name: 'rubocop-rspec',
-            cop_class_name: "::RuboCop::Cop::RSpec::#{cop_class_suffix}",
+            cop_class_name: "::RuboCop::Cop::RSpec::#{cop_class_suffix}"
           },
           # for rubocop-rspec v3+
           {
             gem_name: 'rubocop-capybara',
-            cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}",
+            cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}"
           }
         ]
       when %r{^(Layout|Lint|Metrics|Naming|Security|Style|Bundler|Gemspec)/}
@@ -90,7 +90,7 @@ module RubocopAutoCorrector
         [
           {
             gem_name: 'rubocop',
-            cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}",
+            cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}"
           }
         ]
       else
@@ -101,7 +101,7 @@ module RubocopAutoCorrector
         [
           {
             gem_name: "rubocop-#{department_snake}",
-            cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}",
+            cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}"
           }
         ]
       end
