@@ -35,19 +35,18 @@ module RubocopAutoCorrector
 
     # @return [String]
     def gem_name
-      gem_name, = rubocop_cop_info
-      gem_name
+      rubocop_cop_info[0][:gem_name]
     end
 
     # @return [String]
     def cop_class_name
-      _, cop_class = rubocop_cop_info
-      cop_class
+      rubocop_cop_info[0][:cop_class_name]
     end
 
     private
 
     # rubocop:disable Metrics/MethodLength
+    # @return [Array<Hash<Symbol, String>>]
     def rubocop_cop_info
       return @rubocop_cop_info if @rubocop_cop_info
 
@@ -56,21 +55,47 @@ module RubocopAutoCorrector
       @rubocop_cop_info =
         case cop_name
         when %r{^RSpec/}
-          ['rubocop-rspec', "::RuboCop::Cop::#{cop_class_suffix}"]
+          [
+            {
+              gem_name: 'rubocop-rspec',
+              cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}",
+            },
+          ]
         when 'Rails/HttpStatus'
-          # for rubocop-rspec < 2.28.0
-          ['rubocop-rspec', "::RuboCop::Cop::RSpec::#{cop_class_suffix}"]
+          [
+            # for rubocop-rspec < 2.28.0
+            {
+              gem_name: 'rubocop-rspec',
+              cop_class_name: "::RuboCop::Cop::RSpec::#{cop_class_suffix}",
+            },
+          ]
         when %r{^(FactoryBot|Capybara)/}
-          # for rubocop-rspec < 2.0.0
-          ['rubocop-rspec', "::RuboCop::Cop::RSpec::#{cop_class_suffix}"]
+          [
+            # for rubocop-rspec < 2.0.0
+            {
+              gem_name: 'rubocop-rspec',
+              cop_class_name: "::RuboCop::Cop::RSpec::#{cop_class_suffix}",
+            },
+          ]
         when %r{^(Layout|Lint|Metrics|Naming|Security|Style|Bundler|Gemspec)/}
           # Official cops
-          ['rubocop', "::RuboCop::Cop::#{cop_class_suffix}"]
+          [
+            {
+              gem_name: 'rubocop',
+              cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}",
+            }
+          ]
         else
           # Unknown cops
           department_camel = cop_name.split('/').first
           department_snake = department_camel.gsub(/(?<=.)([A-Z])/) { |s| "_#{s}" }.downcase
-          ["rubocop-#{department_snake}", "::RuboCop::Cop::#{cop_class_suffix}"]
+
+          [
+            {
+              gem_name: "rubocop-#{department_snake}",
+              cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}",
+            }
+          ]
         end
     end
     # rubocop:enable Metrics/MethodLength
