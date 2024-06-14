@@ -24,12 +24,12 @@ module RubocopAutoCorrector
           #
           # return ::RuboCop::Cop::RSpec::AlignLeftLetBrace.support_autocorrect? if ::RuboCop::Cop::RSpec::AlignLeftLetBrace.respond_to?(:support_autocorrect?)
           # ::RuboCop::Cop::RSpec::AlignLeftLetBrace.new.respond_to?(:autocorrect)
-  
+
           begin
             require '#{gem_name}'
           rescue LoadError
           end
-  
+
           return #{cop_class_name}.support_autocorrect? if #{cop_class_name}.respond_to?(:support_autocorrect?)
           #{cop_class_name}.new.respond_to?(:autocorrect)
         RUBY
