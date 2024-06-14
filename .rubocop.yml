@@ -26,3 +26,7 @@ Layout/LineLength:
 
 Style/Documentation:
   Enabled: false
+
+Style/IfUnlessModifier:
+  Exclude:
+    - Gemfile
