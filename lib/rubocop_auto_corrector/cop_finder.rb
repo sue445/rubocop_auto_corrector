@@ -11,7 +11,7 @@ module RubocopAutoCorrector
 
     # Whether this cop is auto correctable
     # @return [Boolean]
-    def auto_correctable?
+    def auto_correctable? # rubocop:disable Metrics/MethodLength
       cop_candidacies.any? do |cop_candidacy|
         gem_name = cop_candidacy[:gem_name]
         cop_class_name = cop_candidacy[:cop_class_name]
