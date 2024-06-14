@@ -38,16 +38,6 @@ module RubocopAutoCorrector
       end
     end
 
-    # @return [String]
-    def gem_name
-      cop_candidacies[0][:gem_name]
-    end
-
-    # @return [String]
-    def cop_class_name
-      cop_candidacies[0][:cop_class_name]
-    end
-
     # rubocop:disable Metrics/MethodLength
     # @return [Array<Hash<Symbol, String>>]
     def cop_candidacies
