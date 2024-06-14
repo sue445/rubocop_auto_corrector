@@ -49,7 +49,7 @@ module RubocopAutoCorrector
           {
             gem_name: 'rubocop-rspec',
             cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}",
-          },
+          }
         ]
       when 'Rails/HttpStatus'
         [
@@ -57,7 +57,7 @@ module RubocopAutoCorrector
           {
             gem_name: 'rubocop-rspec',
             cop_class_name: "::RuboCop::Cop::RSpec::#{cop_class_suffix}",
-          },
+          }
         ]
       when %r{^FactoryBot/}
         [
@@ -70,7 +70,7 @@ module RubocopAutoCorrector
           {
             gem_name: 'rubocop-factory_bot',
             cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}",
-          },
+          }
         ]
       when %r{^Capybara/}
         [
@@ -83,7 +83,7 @@ module RubocopAutoCorrector
           {
             gem_name: 'rubocop-capybara',
             cop_class_name: "::RuboCop::Cop::#{cop_class_suffix}",
-          },
+          }
         ]
       when %r{^(Layout|Lint|Metrics|Naming|Security|Style|Bundler|Gemspec)/}
         # Official cops
