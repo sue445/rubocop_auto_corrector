@@ -57,7 +57,11 @@ module RubocopAutoCorrector
         case cop_name
         when %r{^RSpec/}
           ['rubocop-rspec', "::RuboCop::Cop::#{cop_class_suffix}"]
-        when %r{^(FactoryBot|Capybara)/}, 'Rails/HttpStatus'
+        when 'Rails/HttpStatus'
+          # for rubocop-rspec < 2.28.0
+          ['rubocop-rspec', "::RuboCop::Cop::RSpec::#{cop_class_suffix}"]
+        when %r{^(FactoryBot|Capybara)/}
+          # for rubocop-rspec < 2.0.0
           ['rubocop-rspec', "::RuboCop::Cop::RSpec::#{cop_class_suffix}"]
         when %r{^(Layout|Lint|Metrics|Naming|Security|Style|Bundler|Gemspec)/}
           # Official cops
