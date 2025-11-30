@@ -1,5 +1,11 @@
 ## master
-[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.5.0...master)
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.5.1...master)
+
+## v0.5.1
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.5.0...v0.5.1)
+
+* Release gem from GitHub Actions
+  * https://github.com/sue445/rubocop_auto_corrector/pull/76
 
 ## v0.5.0
 [full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.4.5...v0.5.0)
