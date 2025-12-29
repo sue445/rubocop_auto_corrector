@@ -4,7 +4,7 @@ Run `rubocop --autocorrect && git commit` with each cop.
 
 [![Gem Version](https://badge.fury.io/rb/rubocop_auto_corrector.svg)](https://badge.fury.io/rb/rubocop_auto_corrector)
 [![test](https://github.com/sue445/rubocop_auto_corrector/actions/workflows/test.yml/badge.svg)](https://github.com/sue445/rubocop_auto_corrector/actions/workflows/test.yml)
-[![Maintainability](https://api.codeclimate.com/v1/badges/384834e50f94e344c439/maintainability)](https://codeclimate.com/github/sue445/rubocop_auto_corrector/maintainability)
+[![Maintainability](https://qlty.sh/gh/sue445/projects/rubocop_auto_corrector/maintainability.svg)](https://qlty.sh/gh/sue445/projects/rubocop_auto_corrector)
 [![Coverage Status](https://coveralls.io/repos/github/sue445/rubocop_auto_corrector/badge.svg?branch=master)](https://coveralls.io/github/sue445/rubocop_auto_corrector?branch=master)
 
 ## Example
