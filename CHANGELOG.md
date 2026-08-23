@@ -1,5 +1,11 @@
 ## master
-[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.5.1...master)
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.5.2...master)
+
+## [v0.5.2](https://github.com/sue445/rubocop_auto_corrector/releases/tag/v0.5.2)
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.5.1...v0.5.2)
+
+* Migrate release_gem workflow to sue445/workflows (Also testing the gem release)
+  * https://github.com/sue445/rubocop_auto_corrector/pull/113
 
 ## v0.5.1
 [full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.5.0...v0.5.1)
