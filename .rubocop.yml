@@ -1,6 +1,6 @@
 AllCops:
-  # rubocop 1.3.0+ requires ruby 2.6+
-  TargetRubyVersion: 2.6
+  # rubocop 1.90.0+ requires ruby 2.7+
+  TargetRubyVersion: 2.7
 
   Exclude:
     - 'spec/dummy/**/*'
