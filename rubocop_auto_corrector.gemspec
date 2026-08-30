@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 2.6.0'
+  spec.required_ruby_version = '>= 2.7.0'
 
   spec.add_dependency 'rubocop', '>= 1.30.0'
 
@@ -43,7 +43,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rspec-parameterized'
   spec.add_development_dependency 'rspec-temp_dir', '>= 1.1.0'
-  spec.add_development_dependency 'rubocop', '>= 1.23.0'
+  spec.add_development_dependency 'rubocop', '>= 1.90.0'
   spec.add_development_dependency 'rubocop-rspec'
   spec.add_development_dependency 'simplecov', '< 0.18.0'
   spec.add_development_dependency 'term-ansicolor', '!= 1.11.1' # ref. https://github.com/flori/term-ansicolor/issues/41
