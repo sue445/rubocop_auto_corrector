@@ -26,7 +26,7 @@ RSpec.describe RubocopAutoCorrector::CopFinder do
 
     using RSpec::Parameterized::TableSyntax
 
-    # rubocop:disable Layout/LineLength
+    # rubocop:disable-next Layout/LineLength
     where(:cop_name, :cop_candidacies) do
       'Layout/AccessModifierIndentation' | [{ gem_name: 'rubocop',               cop_class_name: '::RuboCop::Cop::Layout::AccessModifierIndentation' }]
       'Metrics/AbcSize'                  | [{ gem_name: 'rubocop',               cop_class_name: '::RuboCop::Cop::Metrics::AbcSize' }]
@@ -46,7 +46,6 @@ RSpec.describe RubocopAutoCorrector::CopFinder do
       'RSpec/FactoryBot/CreateList'           | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::FactoryBot::CreateList' }]
       'RSpec/Rails/HttpStatus'                | [{ gem_name: 'rubocop-rspec', cop_class_name: '::RuboCop::Cop::RSpec::Rails::HttpStatus' }]
     end
-    # rubocop:enable Layout/LineLength
 
     with_them do
       it { is_expected.to eq cop_candidacies }
