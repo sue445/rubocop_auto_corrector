@@ -1,5 +1,13 @@
 ## master
-[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.5.2...master)
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v1.0.0...master)
+
+## [v1.0.0](https://github.com/sue445/rubocop_auto_corrector/releases/tag/v1.0.0)
+[full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.5.2...v1.0.0)
+
+* Requires Ruby 2.7+
+  * https://github.com/sue445/rubocop_auto_corrector/pull/115
+* Requires rubocop 1.51.0+ in runtime dependency
+  * https://github.com/sue445/rubocop_auto_corrector/pull/116
 
 ## [v0.5.2](https://github.com/sue445/rubocop_auto_corrector/releases/tag/v0.5.2)
 [full changelog](http://github.com/sue445/rubocop_auto_corrector/compare/v0.5.1...v0.5.2)
