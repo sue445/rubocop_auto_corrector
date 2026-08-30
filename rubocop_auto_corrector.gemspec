@@ -43,7 +43,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rspec-parameterized'
   spec.add_development_dependency 'rspec-temp_dir', '>= 1.1.0'
-  spec.add_development_dependency 'rubocop', '>= 1.23.0'
+  spec.add_development_dependency 'rubocop', '>= 1.90.0'
   spec.add_development_dependency 'rubocop-rspec'
   spec.add_development_dependency 'simplecov', '< 0.18.0'
   spec.add_development_dependency 'term-ansicolor', '!= 1.11.1' # ref. https://github.com/flori/term-ansicolor/issues/41
